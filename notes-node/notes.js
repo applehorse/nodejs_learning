@@ -38,8 +38,10 @@ var getAll = () => {
     console.log('Getting all notes');
 };
 
-var getNote = (title, body) => {
-    console.log('Reading note', title, body);
+var getNote = (title) => {
+    var notes = fetchNotes();
+    var readNote = notes.filter((note) => note.title === title);
+    return readNote[0];
 };
 
 var removeNote = (title) => {
@@ -53,9 +55,19 @@ var removeNote = (title) => {
     return notes.length !== newNotes.length;
 };
 
+var lognote = (note) => {
+    // Break on this line and use repl to output note
+    // User read command with --title secret6
+    debugger;
+    console.log('----');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+};
+
 module.exports = {
     addNote,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    lognote
 };

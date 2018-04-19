@@ -6,6 +6,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "lodash": "^4.17.5",
+    "nodemon": "^1.17.3",
     "yargs": "^4.7.1"
   },
   "devDependencies": {},
