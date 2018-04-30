@@ -36,6 +36,8 @@ var addNote = (title, body) => {
 
 var getAll = () => {
     console.log('Getting all notes');
+    var notes = fetchNotes();
+    return notes;
 };
 
 var getNote = (title) => {
@@ -58,7 +60,7 @@ var removeNote = (title) => {
 var lognote = (note) => {
     // Break on this line and use repl to output note
     // User read command with --title secret6
-    debugger;
+    //debugger;
     console.log('----');
     console.log(`Title: ${note.title}`);
     console.log(`Body: ${note.body}`);
