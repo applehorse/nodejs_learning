@@ -30,7 +30,9 @@ const argv = yargs
     .command('remove', 'Remove a note', {
         title: title_options
     })
-    .help()
+    .strict()
+    .showHelpOnFail(true)
+    .help("showHelp")
     .argv;
 var command = argv._[0];
 
@@ -46,6 +48,7 @@ if (command === 'add'){
     var noteList = notes.getAll();
     debugger;
     if(noteList){
+        console.log(`There are ${noteList.length} notes`);
         noteList.forEach((note) => {
             notes.lognote(note);
         });
